@@ -10,13 +10,13 @@ Lightweight widget with base functionality in just a few lines of code. Without 
 ## Install
 
 ```
-php composer.phar require ghopper/file-input "*"
+php composer.phar require "ghopper/fileinput:@dev"
 ```
 or add to composer.json
 ```json
 {
     "require": {
-        "ghopper/file-input": "*"
+        "ghopper/fileinput": "@dev"
     }
 }
 ```
@@ -96,7 +96,7 @@ $uploadedImages = UploadedFile::getInstances($model, 'uploadedFiles'); // files 
 $uploadedImageLabels = $model->uploadedFilesName; // file labels
 ```
 
-Furthermore, you can update the images by files manipulation and its labels:
+With two arrays (just uploaded files and file labels (both already uploaded and new ones)) you can manage server-side files. Delete server file if appropriate label doen't exists.
 ```php
     public function actionUpdate($id)
     {
